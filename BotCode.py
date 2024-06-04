@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 #Initializing Variables
-load_dotenv('TOKEN.env')
+load_dotenv()
 intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
@@ -16,7 +16,7 @@ clients = discord.Client(command_prefix = '!', intents=intents)
 
 
 client = discord.Client(intents=intents)
-token = os.getenv('TOKEN')
+token = str(os.getenv('TOKEN'))
 
 @client.event 
 async def on_ready():

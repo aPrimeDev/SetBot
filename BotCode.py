@@ -1,8 +1,14 @@
 #Importing discord
 import random
 import discord
+import boto3
 import os
 from dotenv import load_dotenv
+from ec2_metadata import ec2_metadata
+
+print(ec2_metadata.region)
+print(ec2_metadata.instance_id)
+
 
 #Initializing Variables
 load_dotenv()
@@ -42,6 +48,10 @@ async def on_message(message):
             return
         elif user_message.lower() == "im a fan":
             await message.channel.send(f'{username} Hell Nah! https://tenor.com/view/kendrick-lamar-god-is-gangsta-u-ahhh-scream-gif-6349874768192364613')
+        elif user_message.lower() == "EC?" or user_message.lower() == "ECtizzle":
+            await message.channel.send(f'{username}')
+
+
 
 @client.event
 async def on_member_join(member):

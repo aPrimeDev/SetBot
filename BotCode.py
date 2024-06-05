@@ -4,9 +4,10 @@ import discord
 import os
 from dotenv import load_dotenv
 from ec2_metadata import ec2_metadata
+#This is my EC2 info
 
-print(ec2_metadata.region)
-print(ec2_metadata.instance_id)
+print(f'DOXIN YA Here is your reigon: {ec2_metadata.region}')
+print(f'DATA? I barely just META Here is your Metadata: {ec2_metadata.instance_id}')
 
 
 #Initializing Variables
